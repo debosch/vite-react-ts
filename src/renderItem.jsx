@@ -26,8 +26,8 @@ function renderItem(props) {
             .then((response) => response.json())
             .then((response) => {
                 setNumber(response.info.count);
-                setTestData([...testData, ...response.results.map((result) => {
-                    return result.name;
+                setTestData([...response.results.map((result) => {
+                    return result.name + " | " + result.id;
                 })])
             })
     }
